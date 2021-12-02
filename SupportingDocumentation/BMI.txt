@@ -1,0 +1,10 @@
+
+
+	BMI = (weight in pounds * 703)/(height in meters * height in meters)
+	 or = Weight in kg / (height in meters * height in meteres) 
+
+BMI VALUES
+Underweight: less than 18.5
+Normal: between 18.5 and 24.9
+Overweight: between 25 and 29.9
+Obese: 30 or greater

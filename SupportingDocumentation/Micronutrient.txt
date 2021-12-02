@@ -1,0 +1,45 @@
+Micronutritional intakes - https://www.health.harvard.edu/staying-healthy/listing_of_vitamins
+
+
+-----VITAMINS-----
+Retinoids and Carotene	-MIN- m.3000IU f.2333IU	-MAX- 10,000IU
+(Vitamin A)
+
+Thiamin (B1)		-MIN- m.1.2mg f.1.1mg	-MAX- Unknown
+Riboflavin (B2)		-MIN- m.1.3mg f.1.1mg	-MAX- Unknown
+Niacin (B3, nicotonic acid)   m.16mg f.14mg	-MAX- 35mg
+Pantothenic acid (B5)	-MIN- m.5mg f.5mg	-MAX- Unknown
+Pyridoxine (B6)		-MIN- m.1.3mg f.1.3mg	-MAX- 100mg
+Cobalamin (B12)		-MIN- m.2.4mcg f.2.4mcg	-MAX- Unknown
+Biotin			-MIN- m.30mcg f.30mcg	-MAX- Unknown
+
+Ascorbic Acid (C)	-MIN- m.90mg f.75mg	-MAX- 2000mg
+
+Choline			-MIN- m.550mg f.425mg	-MAX- 3500mg
+
+Calciferol (D)		-MIN-<70-600IU >70-800IU-MAX- 2000IU
+
+Alpha-Tocopherol (E) 	-MIN- m.15mg f.15mg	-MAX- 1000mg	(min 22IU natural source, max 1500IU)
+
+Folic acid (B9)		-MIN- m.400mcg f.400mcg	-MAX- 1000mcg
+
+Phylloquinone Menadione -MIN- m.120mcg f.90mcg	-MAX- Unknown
+(K)
+
+
+-----MINERALS-----
+Calcium		-MIN- <50-1000mg >50-1200mg	-MAX- 2500mg
+Chromium	-MIN- m.35mcg w.25mcg		-MAX- Unknown (>50 m.30mcg f.20mcg)
+Copper		-MIN- 900mcg			-MAX- 10,000mcg
+Fluoride	-MIN- m.4mg f.3mg		-MAX- 10mg
+Iodine		-MIN- 150mcg			-MAX- 1100mcg
+Iron		-MIN- m.8mg <50-f.18mg >50-8mg	-MAX- 45mg	(vegetarian twice this amount if source is food)
+Magnesium	-MIN- m.420mg f.320mg		-MAX- (suppliment only-350mg)
+Manganese	-MIN- m.2.3mg f.1.8mg		-MAX- 11mg
+Molybdenum	-MIN- m.45mcg f.45mcg		-MAX- 2000mcg
+Phosphorus	-MIN- 700mg			-MAX- <70-4000mg >70-3000mg
+Potassium	-MIN- 4.7g			-MAX- Unknown (avoid high dose suppliment)
+Selenium	-MIN- 55mcg			-MAX- 400mcg
+Sodium		-MIN- 2300mg			-MAX- Unknown
+Sulfur		-MIN- Unknown			-MAX- Unknown
+Zinc		-MIN- m.11mg f.8mg		-MAX- 40mg (Vegetarians twice this amount as absorbtion is lower)

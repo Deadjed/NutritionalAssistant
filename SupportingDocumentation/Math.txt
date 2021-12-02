@@ -1,0 +1,23 @@
+Calculating a persons macros
+
+***BMR***
+Ganpule method (Validity of Predictive Equations for Basal Metabolic Rate in Japanese Adults)
+W-weight(Kg) H-height(cm) A-Age(Years)
+
+	MALE - (0.0481 * W + 0.0234 * H - 0.0138 * A - 0.4235) * 1000 / 4.186
+	FEMALE - (0.0481 * W + 0.0234 * H - 0.0138 * A - 0.9708) * 1000 / 4.186
+
+***TDEE***
+
+range from 1.2-1.9
+
+	1.2 Desk job no training
+	1.375 exercise 1-3 days/week
+	1.55 train 3-5 days/week
+	1.725 train 6-7 days/week
+	1.9 train 2x day
+
+***Calories***
+BMR * TDEE
+
+***Macros***

@@ -1,0 +1,51 @@
+USER'S EXPERIENCE
+
+NUTRITIONAL ASSISTANT
+Account keeps track of individuals data
+	-Name, Height, Weight,
+	-Calculate Macros (maintenance calories, user defined calorie intake for specified performance, good split into 	
+	protein/carbs/fat)
+
+select from foods they like
+	-Group foods into proteins/carbs/fats
+
+recieves meal plan consisting of foods they enjoy
+	-information on why each foods (macro/micro)
+	-information on what foods would give more benefits
+	-aim to get all vitamins/minerals
+
+Online database for other users to submit recipe's
+	-users can search through recipe's of foods they've currently chosen
+	-option to make recipe's scalable to each users requirements
+	
+WORKOUT ASSISTANT
+Make workout plan consisting of main compounds
+	-User input max lifts and recommended weights calculated
+
+Track workout progress and progressive overload weights
+
+
+PAGES
+HOME PAGE
+	Users data/progress (Name, Weight, calories (macros), **GYM progress**)
+MEAL PAGE
+	Users nutritional requirement
+	Meals and their nutritional value
+	Macro's/Micros/Vitamins/Minerals required vs in your foods
+	options to add foods
+	link to FOODS SELECTOR
+	FOODS SELECTOR
+		choose which foods from macro groups
+	link to RECIPE'S
+	RECIPE's
+		create recipe's to use with your ingredients
+		link to ONLINE RECIPE'S
+		ONLINE RECIPE'S
+			search through users shared recipes containing your ingredients 
+			ranked by rating
+WORKOUT PAGE
+	Max lifts on compounds
+	link to GYM PLAN
+	GYM PLAN
+		Workouts recommended for each day
+		Weights recommended for main lifts depending on week for progressive overload

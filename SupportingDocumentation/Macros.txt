@@ -1,0 +1,14 @@
+Prog Design
+
+---PREFACE---
+	Protein: 1.8 grams per kg or 0.8 grams per lb of bodyweight per day.
+	Fat: 30-35% of total calories per day.
+	Carbs: The remainder of calories left after protein and fat has been set.
+	*
+	45 to 60 percent carbohydrate
+	20 to 35 percent fats
+	Remainder from protein 
+
+	Carbohydrates have four calories per gram
+	Proteins have four calories per gram
+	Fats have nine calories per gram
