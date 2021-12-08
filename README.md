@@ -2,24 +2,15 @@
 #### Video Demo: https://youtu.be/xk9OZazwo7g
 #### Description: Nutritional Assistant is a text based program designed to calculate the users nutritional requirements and suggest dietry improvements based on that information.
 
-###########
-#  Usage  #
-###########
-
+#  Usage  
 Launching the executable file will run through a series of questions to set up your user data.
 From there you will have to option to View your user data, Search for foods (and add them to your diet), Check your diet and how it compares to your recommended nutritional intakes, and Remove foods from your diet.
 
-############
-#DISCLAIMER#
-############
-
+##### DISCLAIMER
 Please keep in mind all information is just a suggestion, I am not a doctor nor a nutritional expert. This program was developed to improve my skills as a programmer and assist in looking after my own health.
 For medical advice consult with a doctor.
 
-############
-#  Design  #
-############
-
+#  Design  
 I decided to learn a new lagnuage on my own and as I enjoyed the C component of the CS50 course the most I settled on C++. This is my first major project written in the language so it may not be the most efficient but I have enjoyed learning how this language works. The choice of program for my final project wasn't one I made until I had most of my program written. I was originally developing this program for myself as I enjoy working out which seems to be an even split of physical exercise and diet and I also was getting a serious case of 'brain fog' which I assumed my diet was playing a role in. Overall there were a lot of inneficiencies in my life I believed a healthy diet would improve. The skills I learnt within programming from CS50 were a perfect fit to solve this kind of problem, and I wanted to push myself by applying a solution with this new language I was learning on my own (C++). I downloaded the FoodNutrientDatabase.csv database file from my local governments website (https://www.foodstandards.gov.au/science/monitoringnutrients/afcd/pages/default.aspx).
 
 There have been many design implementations I have made to improve the program over all. For instance, 
@@ -40,7 +31,7 @@ Is the main file that loops over the 'main menu' selection of functions that mak
 Is a coma seperated value file containing nutritional information on common foods and beverages, this raw data is what the program uses to search, calculate, and suggest all food information you see during usage.
 
 #### Database.h
-Is the header file containing the 'Food' Class which stores and queries information from FoodNutrientDatabase.csv. The Food class has functions to load a database into memory, search the stored database, return micronutritional information from the database, return macronutritional information from the database, return a food items name based on it's location in the database, return a food items location in the database based on it's name, recommend foods based on a vector of symbols reffering to nutritional values needed. Calling functions using an object of this class makes working with the information within the database much easier. For example when an object of class Person wishes to suggest food items to the user based on thier macronutritional deficiencies, the object of class Person calls the object of databases (that currently has the FoodNutrientDatabase.csv data stored in memory) function recommend_foods. This function only requires that a vector of symbols reffering to the nutrient it wishes to suggest as the Food class handles the mapping of where each nutrients data is stored within the csv file.
+Is the header file containing the 'Food' Class which stores and queries information from 'FoodNutrientDatabase.csv.' The Food class has functions to load a database into memory, search the stored database, return micronutritional information from the database, return macronutritional information from the database, return a food items name based on it's location in the database, return a food items location in the database based on it's name, recommend foods based on a vector of symbols reffering to nutritional values needed. Calling functions using an object of this class makes working with the information within the database much easier. For example when an object of class Person wishes to suggest food items to the user based on thier macronutritional deficiencies, the object of class Person calls the object of databases (that currently has the FoodNutrientDatabase.csv data stored in memory) function recommend_foods. This function only requires that a vector of symbols reffering to the nutrient it wishes to suggest as the Food class handles the mapping of where each nutrients data is stored within the csv file.
 
 #### Person.h
 Is the header file storing the Person class which holds all the users data. This class also contains functions to get user data, print user data, calculate the users macronutritional requirements, add food items to the users diet, check the users diet, and remove foods from the users diet.
