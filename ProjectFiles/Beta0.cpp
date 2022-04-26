@@ -29,9 +29,11 @@ int main()
               << "(V)iew user information\n"
               << "(E)xit the program\n";
     char c;
-    while (std::cin >> c) {
+    while (std::cin >> c) 
+    {
         c = std::toupper(c);
-        switch (c) {
+        switch (c) 
+        {
             case 'C' :
                 user.check_diet(food);
                 break;
@@ -41,16 +43,20 @@ int main()
             case 'S' :
                 food.searchDatabase();
                 std::cout << "\nWould you like to add one of these to your diet(Y/N)?\n";
-                while (std::cin >> c) {
+                while (std::cin >> c) 
+                {
                     c = std::toupper(c);
-                    if (c == 'Y') {
+                    if (c == 'Y') 
+                    {
                         std::cout << "Please enter the food id number: \n";
                         int i;
                         std::cin >> i;
                         if (i > 0)
                             user.add_food(food, i);
                         break;
-                    } else if (c == 'N') {
+                    } 
+                    else if (c == 'N') 
+                    {
                         break;
                     }
                     std::cout << "Please enter 'Y' for yes or 'N' for no: \n";
