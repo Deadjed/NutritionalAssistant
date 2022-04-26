@@ -9,24 +9,6 @@
 #include <cstdlib>
 #include <cctype>
 
-class Food
-{
-public:
-    //Public functions
-    void loadDatabase(std::string& csvFile);
-    void searchDatabase();
-    std::vector<double> return_micros(Food& food, int id, double grams);
-    std::vector<int> return_macros(Food& food, int id, double grams);
-    std::string returnName(int id);
-    int returnId(std::string name);
-    void recommend_foods(std::vector<std::string>& deficient);
-private:
-    //Private functions
-    std::vector<int> map(std::vector<std::string>& symbols);
-    //Private objects
-    std::vector<std::vector<std::string>> database;
-};
-
 void Food::loadDatabase(std::string& csvFile)
 {    
     std::string temp, word, sline;
