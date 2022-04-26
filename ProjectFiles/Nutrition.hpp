@@ -59,3 +59,8 @@ private:
     double Sulfur = 0;
     double Zinc = 0;
 };
+
+class NutritionalRequirements
+{
+
+};
