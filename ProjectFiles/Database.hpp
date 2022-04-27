@@ -48,7 +48,7 @@ private:
     /*
      * Maps macro/micro database values 
      */
-    std::vector<int> mapNutrients(std::vector<std::string>& symbols)
+    std::vector<int> mapNutrients(std::vector<std::string>& symbols);
       
     /*
      *
