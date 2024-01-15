@@ -59,10 +59,9 @@ int main()
         std::cout << "Table created successfully" << std::endl;
     }
 
-/*
     // Insert data
-    const char* insertDataSQL = "INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS) "
-                                "VALUES (1, 'John Doe', 30, '123 Main St');";
+    const char* insertDataSQL = "INSERT INTO FOOD (PFK, ID, Name) "
+                                "VALUES (1, 1, 'Rice');";
 
     rc = sqlite3_exec(db, insertDataSQL, 0, 0, &errMsg);
 
@@ -73,6 +72,7 @@ int main()
         std::cout << "Records created successfully" << std::endl;
     }
 
+/*
     // Retrieve data
     const char* selectDataSQL = "SELECT * FROM COMPANY";
 
