@@ -65,6 +65,7 @@ int main()
 
     // Parse CSV line
     int id = 0;
+    std::string insertFoodDataSQL;
 
     // Get lines from csv
     while (std::getline(inputFile, line)) {
@@ -80,7 +81,7 @@ int main()
 
             while ((*c != ',' || insideString) && *c != '\n') {
                 if (*c == '"') insideString = !insideString;
-                if (*c != '"' && *c != ' ') word += *c;
+                if (*c != '"' && *c != ' ' && *c != '\'') word += *c;
                 c++;
             }
             if (*c == ',') {
@@ -91,19 +92,19 @@ int main()
         }
         
         // Insert data
-        const std::string insertFoodDataSQL = "INSERT INTO FOOD (PFK, Name, Protein, Fat, Carbohydrate) "
+        insertFoodDataSQL += " INSERT INTO FOOD (PFK, Name, Protein, Fat, Carbohydrate) "
                                         "VALUES ('" + parsedLine.at(0) + "', '" + parsedLine.at(2) + "', " + parsedLine.at(6) + ", " + parsedLine.at(8) + ", " + parsedLine.at(35) + ");";
 
-        rc = sqlite3_exec(db, insertFoodDataSQL.c_str(), 0, 0, &errMsg);
-
-        if (rc != SQLITE_OK) {
-            std::cerr << "SQL error: " << errMsg << std::endl;
-            sqlite3_free(errMsg);
-        } else {
-            std::cout << parsedLine.at(2) << " Records created successfully" << std::endl;
-        }
     }
 
+    rc = sqlite3_exec(db, insertFoodDataSQL.c_str(), 0, 0, &errMsg);
+
+    if (rc != SQLITE_OK) {
+        std::cerr << "SQL error: " << errMsg << std::endl;
+        sqlite3_free(errMsg);
+    } else {
+        std::cout << "Records created successfully" << std::endl;
+    }
     // Close the file
     inputFile.close();
 
