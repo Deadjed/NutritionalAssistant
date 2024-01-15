@@ -26,22 +26,6 @@ int main()
                                  "PRAGMA foreign_keys = ON; "
                                  "CREATE TABLE Food ( "
                                      "PFK             CHAR(7)     NOT NULL, "
-                                     "ID              INTEGER     NOT NULL, "
-                                     "Derivation      TEXT, "
-                                     "Name            TEXT        NOT NULL, "
-                                     "Description     TEXT, "
-                                     "Sampling        TEXT, "
-                                     "Nitrogen        REAL, "
-                                     "Fat             REAL, "
-                                     "Gravity         REAL, "
-                                     "Analysed        TEXT, "
-                                     "Unanalysed      TEXT, "
-                                     "Classification  INTEGER, "
-                                     "ClassName       TEXT, "
-                                     "PRIMARY KEY (PFK) "
-                                 "); "
-                                 "CREATE TABLE Nutrition ( "
-                                     "PFK             CHAR(7)     NOT NULL, "
                                      "Classification  INTEGER, "
                                      "Name            TEXT        NOT NULL, "
                                      "Energy_Fibre   INTEGER, "
@@ -49,8 +33,7 @@ int main()
                                      "Protein         REAL, "
                                      "Fat             REAL, "
                                      "Carbohydrate    REAL, "
-                                     "PRIMARY KEY (PFK), "
-                                     "FOREIGN KEY (PFK) REFERENCES Food (PFK) "
+                                     "PRIMARY KEY (PFK) "
                                  ");";
 
     rc = sqlite3_exec(db, createTableSQL, 0, 0, &errMsg);
@@ -106,15 +89,12 @@ int main()
                 counter++;
             }
         }
-
-        // Add line to database
-        std::cout << parsedLine.at(2) << std::endl;
         
         // Insert data
-        const std::string insertDataSQL = "INSERT INTO FOOD (PFK, ID, Name) "
-                                        "VALUES ('" + parsedLine.at(0) + "', " + std::to_string(id) + ", '" + parsedLine.at(2) + "');";
+        const std::string insertFoodDataSQL = "INSERT INTO FOOD (PFK, Name, Protein, Fat, Carbohydrate) "
+                                        "VALUES ('" + parsedLine.at(0) + "', '" + parsedLine.at(2) + "', " + parsedLine.at(6) + ", " + parsedLine.at(8) + ", " + parsedLine.at(35) + ");";
 
-        rc = sqlite3_exec(db, insertDataSQL.c_str(), 0, 0, &errMsg);
+        rc = sqlite3_exec(db, insertFoodDataSQL.c_str(), 0, 0, &errMsg);
 
         if (rc != SQLITE_OK) {
             std::cerr << "SQL error: " << errMsg << std::endl;
