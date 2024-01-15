@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
 #include <sqlite3.h>
 
 int main()
@@ -59,18 +62,72 @@ int main()
         std::cout << "Table created successfully" << std::endl;
     }
 
-    // Insert data
-    const char* insertDataSQL = "INSERT INTO FOOD (PFK, ID, Name) "
-                                "VALUES (1, 1, 'Rice');";
+    
+    // Specify the file name
+    std::string fileName = "../database/FoodNutrientDatabase.csv";
 
-    rc = sqlite3_exec(db, insertDataSQL, 0, 0, &errMsg);
+    // Create an input file stream
+    std::ifstream inputFile(fileName);
 
-    if (rc != SQLITE_OK) {
-        std::cerr << "SQL error: " << errMsg << std::endl;
-        sqlite3_free(errMsg);
-    } else {
-        std::cout << "Records created successfully" << std::endl;
+    // Check if the file is open
+    if (!inputFile.is_open()) {
+        std::cerr << "Error opening file: " << fileName << std::endl;
+        return 1; // Return an error code
     }
+
+    // Read and print the contents line by line
+    std::string line;
+    std::getline(inputFile, line);
+    std::getline(inputFile, line);
+
+    // Parse CSV line
+    int id = 0;
+
+    // Get lines from csv
+    while (std::getline(inputFile, line)) {
+        char* c = &line[0];
+        std::vector<std::string> parsedLine;
+        int counter = 0;
+
+        // Get words in line
+        while (*c != '\n' && counter != 252)
+        {
+            std::string word = "";
+            bool insideString = false;
+
+            while ((*c != ',' || insideString) && *c != '\n') {
+                if (*c == '"') insideString = !insideString;
+                if (*c != '"' && *c != ' ') word += *c;
+                c++;
+            }
+            if (*c == ',') {
+                parsedLine.push_back(word);
+                c++;
+                counter++;
+            }
+        }
+
+        // Add line to database
+        std::cout << parsedLine.at(2) << std::endl;
+        
+        // Insert data
+        const std::string insertDataSQL = "INSERT INTO FOOD (PFK, ID, Name) "
+                                        "VALUES ('" + parsedLine.at(0) + "', " + std::to_string(id) + ", '" + parsedLine.at(2) + "');";
+
+        rc = sqlite3_exec(db, insertDataSQL.c_str(), 0, 0, &errMsg);
+
+        if (rc != SQLITE_OK) {
+            std::cerr << "SQL error: " << errMsg << std::endl;
+            sqlite3_free(errMsg);
+        } else {
+            std::cout << parsedLine.at(2) << " Records created successfully" << std::endl;
+        }
+    }
+
+    // Close the file
+    inputFile.close();
+
+
 
 /*
     // Retrieve data
