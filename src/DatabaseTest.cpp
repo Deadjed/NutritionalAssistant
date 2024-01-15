@@ -16,13 +16,39 @@ int main()
         std::cout << "Opened database successfully" << std::endl;
     }
 
-/*
     // Create a table
-    const char* createTableSQL = "CREATE TABLE COMPANY("
-                                 "ID INT PRIMARY KEY     NOT NULL,"
-                                 "NAME           TEXT    NOT NULL,"
-                                 "AGE            INT     NOT NULL,"
-                                 "ADDRESS        CHAR(50));";
+    const char* createTableSQL = "PRAGMA foreign_keys = OFF; "
+                                 "drop table if exists Food; "
+                                 "drop table if exists Nutrition; "
+                                 "PRAGMA foreign_keys = ON; "
+                                 "CREATE TABLE Food ( "
+                                     "PFK             CHAR(7)     NOT NULL, "
+                                     "ID              INTEGER     NOT NULL, "
+                                     "Derivation      TEXT, "
+                                     "Name            TEXT        NOT NULL, "
+                                     "Description     TEXT, "
+                                     "Sampling        TEXT, "
+                                     "Nitrogen        REAL, "
+                                     "Fat             REAL, "
+                                     "Gravity         REAL, "
+                                     "Analysed        TEXT, "
+                                     "Unanalysed      TEXT, "
+                                     "Classification  INTEGER, "
+                                     "ClassName       TEXT, "
+                                     "PRIMARY KEY (PFK) "
+                                 "); "
+                                 "CREATE TABLE Nutrition ( "
+                                     "PFK             CHAR(7)     NOT NULL, "
+                                     "Classification  INTEGER, "
+                                     "Name            TEXT        NOT NULL, "
+                                     "Energy_Fibre   INTEGER, "
+                                     "Energy          INTEGER, "
+                                     "Protein         REAL, "
+                                     "Fat             REAL, "
+                                     "Carbohydrate    REAL, "
+                                     "PRIMARY KEY (PFK), "
+                                     "FOREIGN KEY (PFK) REFERENCES Food (PFK) "
+                                 ");";
 
     rc = sqlite3_exec(db, createTableSQL, 0, 0, &errMsg);
 
@@ -33,6 +59,7 @@ int main()
         std::cout << "Table created successfully" << std::endl;
     }
 
+/*
     // Insert data
     const char* insertDataSQL = "INSERT INTO COMPANY (ID, NAME, AGE, ADDRESS) "
                                 "VALUES (1, 'John Doe', 30, '123 Main St');";
